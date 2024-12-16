@@ -42,45 +42,45 @@ Before running the application, ensure the following are installed:
 ## Setup
 
 ### Clone the Repository
-git clone https://github.com/prvics/solarwatch-cc-project
-cd solarwatch-cc-project
+- git clone https://github.com/prvics/solarwatch-cc-project
+- cd solarwatch-cc-project
 
 ### Backend
-cd backend
+- cd backend
 
 Restore dependencies and run migrations:
-dotnet restore
-dotnet ef database update
+- dotnet restore
+- dotnet ef database update
 
 Run the API:
-dotnet run
+- dotnet run
 
 ### Frontend
-cd frontend
+- cd frontend
 
 Install dependencies:
-npm i
+- npm i
 
 Start the React application:
-npm start
+- npm start
 
 ---
 
 ### API Endpoints
 
 ## Authentication
-	•	POST /api/Auth/Register - Register a new user
-	•	POST /api/Auth/Login - Login and retrieve a token
+-	POST /api/Auth/Register - Register a new user
+-	POST /api/Auth/Login - Login and retrieve a token
 
 ## City Management
-	•	GET /api/SolarWatch/cities - Get all cities
-	•	GET /api/SolarWatch/cities/{id} - Get a city by ID
-	•	POST /api/SolarWatch/cities - Create a new city
-	•	PUT /api/SolarWatch/cities/{id} - Update an existing city
-	•	DELETE /api/SolarWatch/cities/{id} - Delete a city
+-	GET /api/SolarWatch/cities - Get all cities
+-	GET /api/SolarWatch/cities/{id} - Get a city by ID
+-	POST /api/SolarWatch/cities - Create a new city
+-	PUT /api/SolarWatch/cities/{id} - Update an existing city
+-	DELETE /api/SolarWatch/cities/{id} - Delete a city
 
 ## Sunrise and Sunset Management
-	•	GET /api/SolarWatch/sunrise-sunsets/{id} - Get sunrise and sunset data by ID
-	•	POST /api/SolarWatch/sunrise-sunsets - Create new sunrise and sunset data
-	•	PUT /api/SolarWatch/sunrise-sunsets/{id} - Update sunrise and sunset data
-	•	DELETE /api/SolarWatch/sunrise-sunsets/{id} - Delete sunrise and sunset data
+-	GET /api/SolarWatch/sunrise-sunsets/{id} - Get sunrise and sunset data by ID
+-	POST /api/SolarWatch/sunrise-sunsets - Create new sunrise and sunset data
+-	PUT /api/SolarWatch/sunrise-sunsets/{id} - Update sunrise and sunset data
+-	DELETE /api/SolarWatch/sunrise-sunsets/{id} - Delete sunrise and sunset data
