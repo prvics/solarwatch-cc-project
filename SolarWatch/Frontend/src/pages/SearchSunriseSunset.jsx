@@ -7,8 +7,9 @@ import SearchForm from "../components/SearchForm";
 
 const SearchSunriseSunset = () => {
   const navigate = useNavigate();
-  const { token, isAdmin } = useOutletContext();
+  const { token, isAdmin, logout } = useOutletContext();
   const [data, setData] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -91,7 +92,13 @@ const SearchSunriseSunset = () => {
           <h2>Welcome to SolarWatch!</h2>
         )}
         {isAdmin && <Admin />}
-        <button onClick={() => navigate("/")} className="logout-btn">
+        <button
+            onClick={() => {
+              logout();
+              navigate("/");
+            }}
+            className="logout-btn"
+        >
           Logout
         </button>
         <SearchForm onSubmit={handleSubmit} />

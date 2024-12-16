@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Backend/Dockerfile
+    ports:
+      - "5222:5222"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5222
+      - ConnectionStrings__SolarWatchDb=Server=db;Database=SolarWatchDB;User Id=sa;Password=Password123!;TrustServerCertificate=True;
+      - JwtSettings__ValidIssuer=apiWithAuthBackend
+      - JwtSettings__ValidAudience=apiWithAuthBackend
+      - JwtSettings__IssuerSigningKey=apiWithAuthBackendItsAVerySecureAndVeryLongSecretKeyHereMin32Chars
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      context: ./Frontend
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    environment:
+      - DOCKER_ENV=true
+    depends_on:
+      - backend
+
+  db:
+    image: "mcr.microsoft.com/mssql/server"
+    ports:
+      - "1433:1433"
+    environment:
+      SA_PASSWORD: "Password123!"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - sql_data:/var/opt/mssql
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  sql_data:
