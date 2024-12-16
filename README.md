@@ -42,8 +42,8 @@ Before running the application, ensure the following are installed:
 ## Setup
 
 ### Clone the Repository
-git clone https://github.com/prvics/solarwatch-cc-project/
-cd solarwatch
+git clone https://github.com/prvics/solarwatch-cc-project
+cd solarwatch-cc-project
 
 ### Backend
 cd backend
