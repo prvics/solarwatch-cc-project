@@ -23,7 +23,7 @@ SolarWatch is a full-stack web application designed to provide sunrise and sunse
 ### Frontend
 - **React.js** with modern JavaScript (ES6+).
 - **Axios** for API requests.
-- Responsive design using **CSS** or **TailwindCSS/Bootstrap** (mention the specific framework if used).
+- Responsive design using **CSS**
 
 ### Tools
 - **Docker** for containerization.
